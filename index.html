@@ -44,8 +44,12 @@
 </head>
 <body>
 
-<h1 id="text">Round Range Slider</h1>
-
+<h1 class="text">Round Range Slider</h1>
+<h2 class="text">Round Range Slider</h2>
+<h3 class="text">Round Range Slider</h3>
+<h4 class="text">Round Range Slider</h4>
+<h5 class="text">Round Range Slider</h5>
+<h6 class="text">Round Range Slider</h6>
 <div class="slidecontainer">
   <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
   <p>Value: <span id="demo"></span></p>
@@ -54,12 +58,15 @@
 <script>
 var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
-var text = document.getElementById("text");
+var text = document.getElementsByClassName("text");
+console.log(text);
 output.innerHTML = slider.value;
 
 slider.oninput = function() {
   output.innerHTML = this.value;
-   text.style.fontSize = this.value + 'px';
+  for (let t of text) {
+    t.style.fontSize = this.value + 'px';
+  }
 }
 </script>
 
