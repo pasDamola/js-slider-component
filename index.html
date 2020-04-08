@@ -3,8 +3,20 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 24px;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+h2 {
+  font-size: 1.2em;
+}
 .slidecontainer {
-  width: 100%;
+  width: 50%;
 }
 
 .slider {
@@ -44,29 +56,38 @@
 </head>
 <body>
 
-<h1 class="text">Round Range Slider</h1>
-<h2 class="text">Round Range Slider</h2>
-<h3 class="text">Round Range Slider</h3>
-<h4 class="text">Round Range Slider</h4>
-<h5 class="text">Round Range Slider</h5>
-<h6 class="text">Round Range Slider</h6>
+<h1 id="h1">Round Range Slider</h1>
+<!-- <h2 id="h2">Round Range Slider</h2>
+<h3 id="h3">Round Range Slider</h3>
+<h4 id="h4">Round Range Slider</h4>
+<h5 id="h5">Round Range Slider</h5>
+<h6 id="h6">Round Range Slider</h6> -->
 <div class="slidecontainer">
-  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+  <input type="range" min="1" max="100" value="0" class="slider" id="myRange">
   <p>Value: <span id="demo"></span></p>
 </div>
 
 <script>
 var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
-var text = document.getElementsByClassName("text");
-console.log(text);
+var h1 = document.getElementById("h1");
+// var h2 = document.getElementById("h2");
+// var h3 = document.getElementById("h3");
+// var h4 = document.getElementById("h4");
+// var h5 = document.getElementById("h5");
+// var h6 = document.getElementById("h6");
 output.innerHTML = slider.value;
+var fontSizeH1 = parseFloat(window.getComputedStyle(h1, null).getPropertyValue('font-size'));
+// var fontSizeH2 = parseFloat(window.getComputedStyle(h2, null).getPropertyValue('font-size'));
+// var fontSizeH3 = parseFloat(window.getComputedStyle(h3, null).getPropertyValue('font-size'));
+// var fontSizeH4 = parseFloat(window.getComputedStyle(h4, null).getPropertyValue('font-size'));
+// var fontSizeH5 = parseFloat(window.getComputedStyle(h5, null).getPropertyValue('font-size'));
+// var fontSizeH6 = parseFloat(window.getComputedStyle(h6, null).getPropertyValue('font-size'));
+console.log(fontSizeH1); 
 
 slider.oninput = function() {
   output.innerHTML = this.value;
-  for (let t of text) {
-    t.style.fontSize = this.value + 'px';
-  }
+  h1.style.fontSize = parseFloat(fontSizeH1 / this.value) + 'px';
 }
 </script>
 
