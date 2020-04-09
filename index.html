@@ -78,12 +78,12 @@ var h4 = document.getElementById("h4");
 var h5 = document.getElementById("h5");
 var h6 = document.getElementById("h6");
 output.innerHTML = slider.value;
-var fontSizeH1 = parseFloat(window.getComputedStyle(h1, null).getPropertyValue('font-size'));
-var fontSizeH2 = parseFloat(window.getComputedStyle(h2, null).getPropertyValue('font-size'));
-var fontSizeH3 = parseFloat(window.getComputedStyle(h3, null).getPropertyValue('font-size'));
-var fontSizeH4 = parseFloat(window.getComputedStyle(h4, null).getPropertyValue('font-size'));
-var fontSizeH5 = parseFloat(window.getComputedStyle(h5, null).getPropertyValue('font-size'));
-var fontSizeH6 = parseFloat(window.getComputedStyle(h6, null).getPropertyValue('font-size'));
+var fontSizeH1 = parseFloat(window.getComputedStyle(h1).getPropertyValue('font-size'));
+var fontSizeH2 = parseFloat(window.getComputedStyle(h2).getPropertyValue('font-size'));
+var fontSizeH3 = parseFloat(window.getComputedStyle(h3).getPropertyValue('font-size'));
+var fontSizeH4 = parseFloat(window.getComputedStyle(h4).getPropertyValue('font-size'));
+var fontSizeH5 = parseFloat(window.getComputedStyle(h5).getPropertyValue('font-size'));
+var fontSizeH6 = parseFloat(window.getComputedStyle(h6).getPropertyValue('font-size'));
 
 
 slider.oninput = function() {
